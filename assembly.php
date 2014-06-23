@@ -34,7 +34,7 @@ echo "Pincode updated Successfully";
 
 <body>
 <center>
-<h1>Tool  For Updating Pin Code</h1>
+<h1>Tool  For Updating Pin Code this code use to test git repogetry</h1>
 <form name="edit_pin" action="" method="post">
 <h3>Pin code-- <?php echo $pin_code; ?></h3>
 <select name="tool_id" id="tool_id" >
