@@ -1,4 +1,9 @@
 <?php
+session_start();
+if($_SESSION['user_name']=='')
+		{
+			header("location:index.php");
+		}
  $s_id=$_REQUEST['s_id'];
  $pin_code=$_REQUEST['pin'];
 $con=mysql_connect('localhost','mynetai_pin2','pin234')or die("Error in connection");
@@ -34,7 +39,7 @@ echo "Pincode updated Successfully";
 
 <body>
 <center>
-<h1>Tool  For Updating Pin Code this code use to test git repogetry</h1>
+<h1>Tool  For Updating Pin Code</h1>
 <form name="edit_pin" action="" method="post">
 <h3>Pin code-- <?php echo $pin_code; ?></h3>
 <select name="tool_id" id="tool_id" >
