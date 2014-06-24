@@ -22,7 +22,7 @@ if (mysqli_connect_errno())
 
 <body>
 <center>
-<h1>Tool  For Updating Pin Code</h1>
+<h1>Tool  For Updating Pin Code Information</h1>
 <form name="edit_pin" action="search1.php" method="post">
 <input type="text" name="pincode" id="pincode" width="40" height="200" />
 
