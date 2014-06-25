@@ -37,7 +37,7 @@ $body = <<< EOD
 <h1> Pin code Mapping Detail</h1>
 <table border=1>
 <tr><td>Pincode</td><td>$pin</td></tr>
-<tr><td>Assembly Constituency</td><td>$ac</td><td><a href='assembly.php?s_id=$s_id&pin=$pin'><b>Edit</b></a></td></tr>
+<tr><td>Assembly Constituency</td><td>$ac</td><td><a href='assembly.php?s_id=$s_id&pin=$pin&asm_id=$as_id'><b>Edit</b></a></td></tr>
 <tr><td>Parliament Constituency</td><td>$pc</td></tr>
 <tr><td>State</td><td>$state_name</td></tr>
 </table>

@@ -6,6 +6,7 @@ if($_SESSION['user_name']=='')
 		}
  $s_id=$_REQUEST['s_id'];
  $pin_code=$_REQUEST['pin'];
+ $as_id=$_REQUEST['asm_id'];
 $con=mysql_connect('localhost','mynetai_pin2','pin234')or die("Error in connection");
 
 $mydb=mysql_select_db('mynetai_pininfo')or die("Error : database is not  connected");
@@ -51,7 +52,7 @@ echo "this is test  massage";
 die;
 */?>
 
-<option value="<?php echo $ac_id; ?>"><?php echo $pc_name."-".$ac_name ?></option>
+<option value="<?php echo $ac_id; ?>" <?php if($as_id==$ac_id){?>selected="selected" <?php }?>><?php echo $pc_name."-".$ac_name ?></option>
 <?php }?>
 </select>
 <input type="submit" name="submit" value="Update Pin" />
