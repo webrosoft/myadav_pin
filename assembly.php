@@ -7,6 +7,7 @@ if($_SESSION['user_name']=='')
  $s_id=$_REQUEST['s_id'];
  $pin_code=$_REQUEST['pin'];
  $as_id=$_REQUEST['asm_id'];
+ //query for showing whole assembly list from a particuler state 
 $result=mysql_query("select m.tool_constituency_id,m.tool_constituency_name,p.tool_pname from map_constituencies m,parliamentary_constituency p where (p.tool_pconstituency_id=m.tool_pconstituency_id) and p.tool_state_district='$s_id' order by p.tool_pname ");
 if(isset($_POST['submit']))
 {
@@ -17,8 +18,6 @@ if($updateresult)
 {
 echo "Pincode updated Successfully";
 }
-
-
 }
 
 ?>
