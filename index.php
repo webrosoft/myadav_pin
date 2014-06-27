@@ -1,9 +1,5 @@
 <?php
-session_start();
- $con=mysql_connect('localhost','mynetai_pin2','pin234')or die("Error in connection");
-
-$mydb=mysql_select_db('mynetai_pininfo')or die("Error : database is not  connected");
-
+include('connection.php');
 	if(isset($_POST['login']))
 		{
 		   $error='';

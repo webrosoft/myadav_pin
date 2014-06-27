@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('connection.php');
 if($_SESSION['user_name']=='')
 		{
 			header("location:index.php");
@@ -7,13 +7,6 @@ if($_SESSION['user_name']=='')
  $s_id=$_REQUEST['s_id'];
  $pin_code=$_REQUEST['pin'];
  $as_id=$_REQUEST['asm_id'];
-$con=mysql_connect('localhost','mynetai_pin2','pin234')or die("Error in connection");
-
-$mydb=mysql_select_db('mynetai_pininfo')or die("Error : database is not  connected");
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
 $result=mysql_query("select m.tool_constituency_id,m.tool_constituency_name,p.tool_pname from map_constituencies m,parliamentary_constituency p where (p.tool_pconstituency_id=m.tool_pconstituency_id) and p.tool_state_district='$s_id' order by p.tool_pname ");
 if(isset($_POST['submit']))
 {

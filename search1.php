@@ -1,19 +1,11 @@
 <?php
-session_start();
+include('connection.php');
 if($_SESSION['user_name']=='')
 		{
 			header("location:index.php");
 		}
 $pin=$_REQUEST['pincode'];	
 require_once 'page.php';
-
-$con=mysql_connect('localhost','mynetai_pin2','pin234')or die("Error in connection");
-
-$mydb=mysql_select_db('mynetai_pininfo')or die("Error : database is not  connected");
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
 //$pincode=$_POST['pincode'];
 $query="select  tool_constituency_id from insert_pin where pincode ='$pin' ";
 $result=mysql_query($query);
