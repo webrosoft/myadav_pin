@@ -19,7 +19,7 @@ include('connection.php');
 					if($count>0)
 					{
 					     $_SESSION['user_name']=$fetch['user'];
-						 header("location:home.php");
+						 header("location:searchbox.php");
 						 exit();
 					}
 				else
