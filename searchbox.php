@@ -5,8 +5,6 @@ if($_SESSION['user_name']=='')
 		{
 			header("location:index.php");
 		}
-
-
 $body= <<< EOD
 <center>
 <h1>Tool  For Updating Pin Code Information</h1>

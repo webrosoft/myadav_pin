@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+require_once 'page.php';
 	if(isset($_POST['login']))
 		{
 		   $error='';
@@ -18,25 +19,20 @@ include('connection.php');
 					$count=mysql_num_rows($query);
 					if($count>0)
 					{
-					     $_SESSION['user_name']=$fetch['user'];
+					    $_SESSION['user_name']=$fetch['user'];
 						 header("location:searchbox.php");
 						 exit();
 					}
 				else
 				{
-				?>
-				 <script type="text/javascript">
-					alert ("Invalid UserName or Password");
-				  </script>
-				<?php
+				 $error_msg="Invalid Username or password";
+				 //echo "Invalid UserName or Password";
 				}
 				
 			}
-		}
-?>
-<html>
-<head>
-
+		}	
+		
+$head= <<< EOD
  <script type="text/javascript">
 function validate_login()
 {	  
@@ -55,12 +51,11 @@ function validate_login()
 		}		
 }
 </script>
-<title>Tool  for Updating Pincode With Constituency</title>
-</head>
-<body>
-		
+EOD;
+$body= <<< EODI
 <center>
 <h1>Tool  For Updating Pin Code</h1>
+<h3>$error_msg</h3>
 	<form action="" method="post" id="form-login">
 						<label id="mod-login-username-lbl" for="mod-login-username">User Name</label>
 				<input name="username" id="username" type="text"  size="15" autocomplete="off" /><br /></br>
@@ -69,5 +64,6 @@ function validate_login()
 				<input type="submit" name="login" id="login"  value="Log in" style="cursor:pointer;" onClick="return validate_login()"/>
 	
 </form>
-</body>
-</html>
+EODI;
+sendPage1($body,$head);
+?>
