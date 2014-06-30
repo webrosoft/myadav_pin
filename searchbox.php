@@ -1,10 +1,10 @@
 <?php
 include('connection.php');
-require_once 'page.php';
 if($_SESSION['user_name']=='')
 		{
 			header("location:index.php");
 		}
+require_once 'page.php';
 $body= <<< EOD
 <center>
 <h1>Tool  For Updating Pin Code Information</h1>
@@ -15,5 +15,5 @@ $body= <<< EOD
 </form>
 </center>
 EOD;
-sendPage($body);
+sendPage($body,$head);
 ?>

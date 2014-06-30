@@ -11,7 +11,7 @@ require_once 'page.php';
  //query for showing whole assembly list from a particuler state 
 $result=mysql_query("select m.tool_constituency_id,m.tool_constituency_name,p.tool_pname from map_constituencies m,parliamentary_constituency p where        (p.tool_pconstituency_id=m.tool_pconstituency_id) and p.tool_state_district='$s_id' order by p.tool_pname ");
 if(isset($_POST['submit']))
-{
+  {
 	$tool_id=$_POST['tool_id'];
 	 $update_query="update insert_pin set tool_constituency_id='$tool_id' where pincode='$pin_code' ";
 	$updateresult=mysql_query($update_query);
@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 		{
 		echo "Pincode updated Successfully";
 		}
-}
+   }
 while(list($ac_id,$ac_name,$pc_name)=mysql_fetch_array($result))
    {
    if($as_id==$ac_id)
@@ -43,5 +43,5 @@ $body = <<< EOD
 </form>
 </center>
 EOD;
-sendPage($body);
+sendPage($body,$head);
 ?>

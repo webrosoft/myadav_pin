@@ -23,13 +23,13 @@ require_once 'page.php';
 						 header("location:searchbox.php");
 						 exit();
 					}
-				else
-				{
-				 $error_msg="Invalid Username or password";
-				 //echo "Invalid UserName or Password";
-				}
+					else
+					{
+					 $error_msg="Invalid Username or password";
+					 //echo "Invalid UserName or Password";
+					}
 				
-			}
+			   }
 		}	
 		
 $head= <<< EOD
@@ -65,5 +65,5 @@ $body= <<< EODI
 	
 </form>
 EODI;
-sendPage1($body,$head);
+sendPage($body,$head);
 ?>
