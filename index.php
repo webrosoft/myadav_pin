@@ -57,13 +57,13 @@ $body= <<< EODI
 <h1>Tool  For Updating Pin Code</h1>
 <h3>$error_msg</h3>
 	<form action="" method="post" id="form-login">
-						<label id="mod-login-username-lbl" for="mod-login-username">User Name</label>
+				<label id="mod-login-username-lbl" for="mod-login-username">User Name</label>
 				<input name="username" id="username" type="text"  size="15" autocomplete="off" /><br /></br>
 				<label id="mod-login-password-lbl" >Password</label>
 				<input name="password" id="password" type="password"  size="15" style="margin-left:7px;"/><br /></br>
 				<input type="submit" name="login" id="login"  value="Log in" style="cursor:pointer;" onClick="return validate_login()"/>
 	
-</form>
+     </form>
 EODI;
 sendPage($body,$head);
 ?>

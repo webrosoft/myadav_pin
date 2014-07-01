@@ -23,7 +23,6 @@ list($pc,$s_id)=mysql_fetch_row($result);
 $result=mysql_query($query);
 list($state_name)=mysql_fetch_row($result);
 
-
 $body = <<< EOD
 <center>
 <h1> Pin code Mapping Detail</h1>
@@ -35,5 +34,5 @@ $body = <<< EOD
 </table>
 </center>
 EOD;
-sendPage($body);
+sendPage($body,$head);
 ?>
